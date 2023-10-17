@@ -1,0 +1,12 @@
+---
+syntax: bash
+tags: [ container, docker ]
+---
+# To copy files/folders between a container and your host:
+docker cp foo.txt mycontainer:/foo.txt
+
+# To copy a file from the running container to host mechine:
+docker cp <container-id>:<path/to/file> <host/copy/path>
+
+# To copy a file from host mechine to the running container:
+docker cp <host/copy/path> <container-id>:<path/to/file>

@@ -1,0 +1,36 @@
+# To display files in a single column:
+ls -1
+
+# To list all files, including hidden files:
+ls -a <dir>
+
+# To list all files, including hidden files, excluding . and ..:
+ls -A
+
+# To display directories only:
+ls -d */ <dir>
+
+# To display directories only, include hidden:
+ls -d .*/ */ <dir>
+
+# To list all files, ending with a file end character: *(executable), /(directory), @(symbolic link):
+ls -lF
+
+# To list all files, with a human-readable size, sorted by size:
+ls -lhS
+
+# To list all files, sorted by create date, in reverse order:
+ls -ltr
+
+# To display all files sorted by changed date, most recent first:
+ls -ltc 
+
+# To show all the subtree files (Recursive Mode):
+ls -R
+
+# To list all files / directories starting with "s"
+# Note: DO NOT use ^ to match the start (GLOB is not REGEX)
+ls s*
+
+# To list all files / directories with 4-character name
+ls ????

@@ -1,0 +1,22 @@
+---
+syntax: bash
+tags: [ container, docker ]
+---
+# build / pull / push image
+docker build -t username/hello .        # To build a docker image
+docker pull <image>
+docker push <image-name>:<image-tag-name> # To push a docker image into dockerhub repository:
+
+docker images      # To list all images
+docker image ls -q # To only see image id
+docker image tag <image-name>:<tag-name> <image-name>:<new-tag-name> # To tag an image
+
+# `docker rmi` = `docker image rm`
+docker rmi <image-name-or-id> # To remove an image
+docker rmi $(docker images | grep "^<none>" | awk '{print $3}') # To remove all untagged images
+
+# To save image as tar archive:
+docker save -o <archive-name>.tar <image-name>
+
+# To restore image from a saved tar archive:
+docker load -i <archive-name>.tar

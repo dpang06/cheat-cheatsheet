@@ -1,0 +1,24 @@
+# To copy a file / multiple files to a destination 
+# Note: if dest is an existing directory, the src will be copied into that directory
+cp [src1] [src2] ...  [dest]
+
+# Copy a directory recursively
+cp -r [src] [dest]
+
+# Copy a file:
+# 1. Do not override any existing file
+# 2. Prompt if going to override any existing file
+cp -n ...
+cp -i ...                  # -i, --interactive
+
+# Copy a file in verbose mode
+cp -v ...
+
+# To create a backup file with date:
+cp foo.txt{,."$(date +%Y%m%d-%H%M%S)"}
+
+# To copy a symlink that points to a directory (and is thus soft) and not
+# 'expand' the symlink (aka, preserve its nature as a symlink):
+# Note this does NOT work (note trailing '/'):  cp -P /path/to/symlink-dir/
+cp -P <symlink-dir> <dest-dir>
+

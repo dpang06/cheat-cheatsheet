@@ -1,0 +1,46 @@
+# ps = process status
+
+# There are 3 types of options:
+# BSD options:       no dash
+# UNIX options:      preceded by a dash
+# GNU long options:  preceded by two dashes
+
+# The columns are:
+# ProcessID, TerminalType, CPU Time (Has been running), Command
+# PID TTY TIME CMD
+
+# Basic flags
+ps    # To list the processes of current shell
+ps -e # To list all processes (identical to -A)
+ps -r # To list all processes running
+ps -x # To list all processes owned by you, i.e same EUID as ps (runner of the ps command)
+ps -d # To list all processes, except session leaders
+ps -T # To list all processes associated with a terminal
+ps -a # To list all processes associated with a terminal, except session leaders
+
+## -N or --deselect : negates the condition
+ps -N  # processes not of current shell
+ps -aN # processes, not associated with a terminal, or session leaders
+
+## Note: session leaders is a process which kicks off other processes
+
+# Select processes
+## all can be a space-delimited list
+ps -C command
+ps -G group                  # group_name or group_id
+ps -g group                  # group_name (or session if the list is completely numeric)
+ps -p process_id             # or `ps p process_id` / `ps --pid process_id`
+ps --ppid parent_process_id
+ps -s session_id
+ps -t tty                    # or `ps t tty` / `ps --tty tty`
+ps -u user                   # user ID (EUID) or name, identical to -u and --user
+ps -U user                   # user ID (RUID) or name
+
+# format
+ps -f ...    # full format
+ps -F ...    # Extra full format
+ps -o pid,user,command # user-defined format, equivalent to `ps o`, `ps --format`
+
+# others (BSD)
+ps aux  # equivalent to `ps -ef`
+ps axjf # To list a process tree

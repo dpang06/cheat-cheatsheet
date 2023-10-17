@@ -1,0 +1,51 @@
+---
+syntax: bash
+tags: [ container, docker ]
+---
+# show all nested cheatsheets:
+# cheat -t docker,personal
+
+# start Docker daemon
+dockerd # or `docker -d` ; might need sudo
+
+# docker images
+docker build -t username/hello .        # To build a docker image
+docker pull <image>
+docker push <image-name>:<image-tag-name> # To push a docker image into dockerhub repository:
+docker images      # To list all images
+docker image ls -q # To only see image id
+docker image tag <image-name>:<tag-name> <image-name>:<new-tag-name> # To tag an image
+# `docker rmi` = `docker image rm`
+docker rmi <image-name-or-id> # To remove an image
+docker rmi $(docker images | grep "^<none>" | awk '{print $3}') # To remove all untagged images
+
+# docker run
+docker run -d \                             # -d: Run in the background (detached mode)
+  --rm                                      # Remove container automatically after exited
+  --name es \                               # --name <name>
+  -p 9200:9200 \                            # -p <host-port>:<container-port>: map a port
+  -p 9300:9300 \
+  -e "discovery.type=single-node" \         # -e: set environment variable
+  docker.elastic.co/elasticsearch/elasticsearch:6.3.2
+docker run <image> <command>               # To run a container with a shell command command
+docker run -it <image> bash                # To start a container with an interactive shell
+docker run <image-name> -v $(pwd):<folder-path-in-container> <image> # link current folder between host and container for development:
+
+# To inspect containers
+docker inspect <container-name-or-id>   # To inspect a running container
+docker ps                               # To list currently running containers
+docker ps -a                            # To list all containers
+docker logs <container-name-or-id>
+docker exec -it <container-name> bash   # To "shell" into a running container (docker-1.3+)
+
+# To remove all stopped containers:
+docker container prune # Or: docker rm $(docker ps -aqf status=exited)
+
+# To remove all volumes not used by at least one container:
+docker volume prune
+
+# To login into hub.docker.com:
+docker login
+
+# List all networks daemon knows about:
+docker network ls

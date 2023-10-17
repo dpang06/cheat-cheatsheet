@@ -1,0 +1,9 @@
+head <file>                     # To show the first 10 lines of <file>
+head -n <number> <file>         # To show the first <number> lines of <file>
+head -n -5 <file>               # To show all but last 5 lines of <file>
+
+head -c <number> <file>         # To show the first <number> bytes of <file>
+head -c -<number> <file>        # To show all but last <number> bytes of <file>
+
+head -v ... # show the filename before each file
+head -q ... # not show the filename before each file

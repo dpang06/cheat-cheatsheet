@@ -1,0 +1,15 @@
+---
+syntax: bash
+tags: [ container, docker ]
+---
+# To create a docker volume:
+docker volume create <volume-name>
+
+# To see information of a docker volume:
+docker volume inspect <volume-name>
+
+# To use a volume in the container:
+docker run -v <volume-name>:<folder-path-in-container> <image>
+
+# To remove all volumes not used by at least one container:
+docker volume prune

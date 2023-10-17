@@ -1,0 +1,24 @@
+# list all files starting with "s"
+# NOTE: DO NOT use "^";  glob is not regex
+ls s*
+
+# list all files/directories with 4-character name
+ls ????
+
+# list all files / directories,
+# 1. starting with a vowel (a,e,i,o,u)
+# 2. starting with a digit
+# 3. starting with a uppercase alphabet
+# 4. starting with a lowercase alphabet
+# 5. starting with a alphabet
+# 6. starting with a alphabet or number
+ls [aeiou]*
+ls [:digit:]*      # or [0-9]
+ls [:upper:]*      # or [A-Z]
+ls [:lower:]*      # or [a-z]
+ls [:alpha:]*      # or [a-zA-Z] or similar
+ls [:alnum:]*      # or [a-zA-Z0-9] or similar
+
+# Note:
+# - There are also curly brackets '{}', exclamation mark '!' and backslash '\'
+# - See more in `man 7 glob`

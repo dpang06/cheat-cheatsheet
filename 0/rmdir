@@ -1,0 +1,5 @@
+# To remove empty directory
+rmdir directory_name
+
+# To remove directory and its ancestors
+rmdir -p a/b/c # similar to rmdir a/b/c a/b a

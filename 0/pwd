@@ -1,0 +1,5 @@
+# Print working directory (with logical path)
+pwd
+
+# Print working directory with physical path
+pwd -P

@@ -1,0 +1,9 @@
+---
+syntax: bash
+tags: [ container, docker ]
+---
+# To get the process ID for a container:
+docker inspect --format {{.State.Pid}} <container-name-or-id>
+
+# To list (and pretty-print) the current mounted volumes for a container:
+docker inspect --format='{{json .Volumes}}' <container-id> | python -mjson.tool

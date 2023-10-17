@@ -1,0 +1,3 @@
+# Override stdin so the input comes from the file specified
+# That is, use a file as input of a command
+[cmd] < [FILE]

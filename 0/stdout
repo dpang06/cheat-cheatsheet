@@ -1,0 +1,11 @@
+# Overwrite:
+# Override stdout so the output overwrite the file
+# Override stderr so the output overwrite the file
+# Override both stdout and stderr so the output overwrite the file
+[cmd] > [FILE]          # same as 1>
+[cmd] 2> [FILE]
+[cmd] &> [FILE]         # or [cmd] > [FILE] 2>&1
+
+# Note:
+# Use double >> to append instead of overwrite
+# Replace [FILE] with /dev/null to silence output

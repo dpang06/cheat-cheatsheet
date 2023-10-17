@@ -1,0 +1,17 @@
+---
+syntax: bash
+tags: [ container, docker ]
+---
+# To start the docker daemon:
+# You might need sudo
+## Method 1: Start directly
+dockerd # docker -d
+## Method 2: Start with systemd
+sudo systemctl start docker
+## Method 3: Configure Docker to start on boot
+### enable
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+### disable
+sudo systemctl disable docker.service
+sudo systemctl disable containerd.service

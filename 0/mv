@@ -1,0 +1,18 @@
+# To move a file to a destination
+# To move a file to a destinated directory
+# Rename a file/folder
+mv <src> <dest>
+
+# To move a file to a destination
+# 1. Override any existing file
+# 2. Prompt if going to override any existing file
+# 3. Do not override any existing file
+mv -f <src> <dest> # (This will override any previous -i or -n args)
+mv -i <src> <dest> # (This will override any previous -f or -n args)
+mv -n <src> <dest> # (This will override any previous -f or -i args)
+
+# To move listed file(s) to a directory
+mv -t <dest> <file>...
+
+# To move in verbose mode
+mv -v ...

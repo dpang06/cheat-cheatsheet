@@ -1,0 +1,12 @@
+# To create nested directories:
+# To create foo/bar and foo/baz directories:
+# To create the foo/bar, foo/baz, foo/baz/zip and foo/baz/zap directories:
+mkdir -p foo/bar/baz
+mkdir -p foo/{bar,baz}
+mkdir -p foo/{bar,baz/{zip,zap}}
+# If there is already an existing dir there, don't show error. (The command does nothing then)
+# If the parent dir required does not exist, create it.
+# For example, when we create `1/2` where `1` does not exist, 1 is then created automatically
+
+# To create directory with file mode 777 (as in chmod)
+mkdir -m 777 [dir]

@@ -1,0 +1,9 @@
+echo hello              # Print "hello"
+echo -n hello           # Print "hello" without the trailing newline
+echo -e hello\\n        # Print "hello" with an additional newline
+echo -e \\tC:\\\\abc    # Print "  C:\abc" where the leading space is a tab character
+
+# Note:
+# The string can be double quoted or not.
+# An additional '\' is to escape character from the bash.
+# -e     enable interpretation of backslash escapes

@@ -1,0 +1,17 @@
+tail <file>                     # To show the last 10 lines of <file>
+tail -n <number> <file>         # To show the last <number> lines of <file>
+tail -n +5 <file>               # To show all, from line 5, of <file>
+
+tail -c <number> <file>         # To show the last <number> bytes of <file>
+tail -c +<number> <file>        # To show all, from the <number>-th byte, of <file>
+
+tail -f ...                     # output appended data as the file grows
+tail -F ...                     # output appended data as the file grows, retru if file is inaccessible
+# Note:
+# `-F` is equivalent to `--follow=name --retry`
+# Note the difference between --follow=name and --follow=descriptor (default)
+# (See more in tail -f)
+#
+# This track file descriptor (not file name) instead:
+# `tail -f --retry [FILE]`
+

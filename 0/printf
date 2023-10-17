@@ -1,0 +1,19 @@
+# Print the following text:
+# ```
+# Welcome!
+# Your home is: [HOME]
+# 
+# ```
+# where [HOME] is your home directory path
+printf 'Welcome!\nYour home is: %s\n' $HOME
+
+# Note that we must use single quote to avoid trouble from exclaimation mark '!'
+
+# to display a value as a signed integer
+printf "%d\n" "123"         # produces 123
+
+# to display a value as a floating point value
+printf "%f\n" "123"         # produces 123.000000
+
+# to display a value as a hexadecimal value
+printf "%x\n" "123"         # produces 7b

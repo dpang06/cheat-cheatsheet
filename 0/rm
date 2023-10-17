@@ -1,0 +1,8 @@
+# To remove all files and subdirs in <dir>:
+rm -rf <dir>
+
+# To ignore non-existent files:
+rm -f <dir>
+
+# To remove a file, prompt before every removal
+rm -i [file]
